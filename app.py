@@ -53,60 +53,76 @@ def chat():
         msg = data.get("msg")  # Retrieve the message from JSON
         if msg:
             response = get_exam_details(msg)
+            print("AAA",response)
             if response == "Exam not found. Please check the name and try again.":
                 # If exam is not found, calculate cosine similarity score
                 best_match_url, max_score = search_general(msg)
+                print(best_match_url, max_score)
                 if best_match_url == "Exam not found" and max_score < 0.35:
                     return jsonify({"response": "Exam not found."})
                 else:
                     return jsonify({"response": f"{best_match_url}"})
+            
             return response
         return jsonify({"response": "Message not provided."}), 400
     return jsonify({"response": "Invalid request."}), 400
 
 def get_exam_details(exam_name):
     exam_name = exam_name.strip().lower()  # Trim spaces and make lowercase
-
+    
     for exam, details in exam_details.items():
+        
+        keys = list(details.keys())
         # Check if the exam keyword is present in the input message
         if exam.lower() in exam_name:
             response = {}
-            if "start date" in exam_name or "starting date" in exam_name:
+            if ("start date" in exam_name or "starting date" in exam_name) and "start_date" in keys:
                 response["start_date"] = {
-                    "name":exam_name,
-                    "start_date": details["start_end"],
+                    "name":exam,
+                    "start_date": details["start_date"],
                 }
-            elif "end date" in exam_name or "ending date" in exam_name:
+            elif ("end date" in exam_name or "ending date" in exam_name) and "end_date" in keys:
                 response["end_date"] = {
-                    "name":exam_name,
+                    "name":exam,
                     "end_date": details["end_date"],
                 }
-            elif "link" in exam_name:
+            elif ("link" in exam_name) and "apply_link" in keys and "url" in keys:
                 response["link_details"] = {
-                    "name":exam_name,
+                    "name":exam,
                     "url": details["url"],
                     "apply_link": details["apply"]
                 }
 
-            elif "date" in exam_name:
+            elif ("date" in exam_name) and "start_date" in keys and "end_date" in keys:
                 response["date"] = {
-                    "name":exam_name,
+                    "name":exam,
                     "start_date": details["start_date"],
                     "end_date": details["end_date"],
                 }
             else:
                 response["exam_details"] = {
-                    "name":details["name"],
-                    "url": details["url"],
-                    "start_date": details["start_date"],
-                    "end_date": details["end_date"],
-                    "apply_link": details["apply"]
                 }
+                
+                if("name" in keys):
+                    response["exam_details"]["name"]=details["name"]
+                    
+                if("url" in keys):
+                    response["exam_details"]["url"]=details["url"]
+                    
+                if("start_date" in keys):
+                    response["exam_details"]["start_date"]=details["start_date"]
+                
+                if("end_date" in keys):
+                    response["exam_details"]["end_date"]=details["end_date"]
+                    
+                if("apply" in keys):
+                    response["exam_details"]["apply_link"]=details["apply"]
 
             # Return the response in JSON format using jsonify
             return jsonify(response)
 
-    return jsonify({"response": "Exam not found. Please check the name and try again."})
+    return "Exam not found. Please check the name and try again."
 
 if __name__ == '__main__':
+    initiate_general_model()    
     app.run(debug=True)
