@@ -85,7 +85,7 @@ def get_exam_details(exam_name):
                     "name":exam,
                     "end_date": details["end_date"],
                 }
-            elif ("link" in exam_name) and "apply_link" in keys and "url" in keys:
+            elif ("link" in exam_name) and "apply" in keys and "url" in keys:
                 response["link_details"] = {
                     "name":exam,
                     "url": details["url"],
