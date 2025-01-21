@@ -53,7 +53,6 @@ def chat():
         msg = data.get("msg")  # Retrieve the message from JSON
         if msg:
             response = get_exam_details(msg)
-            print("AAA",response)
             if response == "Exam not found. Please check the name and try again.":
                 # If exam is not found, calculate cosine similarity score
                 best_match_url, max_score = search_general(msg)
@@ -123,6 +122,7 @@ def get_exam_details(exam_name):
 
     return "Exam not found. Please check the name and try again."
 
+initiate_general_model()   
 if __name__ == '__main__':
     initiate_general_model()    
     app.run(debug=True)
