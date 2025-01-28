@@ -7,7 +7,7 @@ This repository contains a Flask-based chatbot API that provides information abo
 ## Features
 - Retrieve detailed information about exams from a predefined dataset.
 - Approximate query matching using pretrained sentence-transformer models.
-- RESTful API endpoint for chatbot integration.
+- Handles detailed exam information retrieval, including start dates, end dates, and application links.
 - CORS enabled for cross-origin requests.
 
 ---
