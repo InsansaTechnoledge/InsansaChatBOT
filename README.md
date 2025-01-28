@@ -22,6 +22,15 @@ To set up and run this project, ensure you have the following installed:
 
 ## Installation
 
-1. **Clone the repository:**
+**Clone the repository**
    ```bash
    git clone https://github.com/InsansaTechnoledge/InsansaChatBOT.git
+   ```
+
+**Requirements**
+
+ All necessary dependencies for this project are listed in the requirements.txt file. To install them, run the following command:
+   ```bash
+   git clone https://github.com/InsansaTechnoledge/InsansaChatBOT.git
+   ```
+---
