@@ -1,155 +1,319 @@
 [
-    {
-      "input": "Hello",
-      "response": "Hi there! How's your day going?"
-    },
-    {
-      "input": "Hi",
-      "response": "Hey! What's up?"
-    },
-    {
-      "input": "Hey",
-      "response": "Hello! How can I help you?"
-    },
-    {
-      "input": "I am hungry",
-      "response": "What do you feel like eating? I can suggest something!"
-    },
-    {
-      "input": "What should I eat?",
-      "response": "How about a pizza? Or maybe something healthy like a salad?"
-    },
-    {
-      "input": "Tell me a joke",
-      "response": "Why did the scarecrow win an award? Because he was outstanding in his field!"
-    },
-    {
-      "input": "I'm bored",
-      "response": "How about watching a movie, reading a book, or going for a walk?"
-    },
-    {
-      "input": "Good morning",
-      "response": "Good morning! I hope you have a great day ahead."
-    },
-    {
-      "input": "Good night",
-      "response": "Good night! Sweet dreams!"
-    },
-    {
-      "input": "How are you?",
-      "response": "I'm just a chatbot, but I'm doing great! How about you?"
-    },
-    {
-      "input": "What’s your favorite food?",
-      "response": "I don't eat, but if I could, I'd probably love ice cream!"
-    },
-    {
-      "input": "What’s your name?",
-      "response": "I’m your friendly chatbot. What's your name?"
-    },
-    {
-      "input": "I'm feeling sad",
-      "response": "I'm here for you. Want to talk about it?"
-    },
-    {
-      "input": "I'm happy",
-      "response": "That's wonderful! Keep smiling!"
-    },
-    {
-      "input": "I'm stressed",
-      "response": "Take a deep breath. Maybe a short break will help."
-    },
-    {
-      "input": "What's the weather like?",
-      "response": "I'm not sure about the weather, but checking a weather app might help!"
-    },
-    {
-      "input": "Play a game with me",
-      "response": "Sure! How about a quick round of 20 questions?"
-    },
-    {
-      "input": "Tell me a fun fact",
-      "response": "Did you know honey never spoils? Archaeologists have found pots of honey in ancient Egyptian tombs that are over 3,000 years old and still edible!"
-    },
-    {
-      "input": "What can you do?",
-      "response": "I can chat with you, tell jokes, share facts, and much more!"
-    },
-    {
-      "input": "Recommend a movie",
-      "response": "How about *The Shawshank Redemption*? It's a classic!"
-    },
-    {
-      "input": "Recommend a book",
-      "response": "Have you tried reading *The Alchemist* by Paulo Coelho? It's inspiring!"
-    },
-    {
-      "input": "What’s your favorite color?",
-      "response": "I like the color of creativity—bright and cheerful like a rainbow!"
-    },
-    {
-      "input": "Do you like music?",
-      "response": "I love music! What's your favorite song?"
-    },
-    {
-      "input": "Sing me a song",
-      "response": "I can't sing, but I can hum... hmmm hmm hmm!"
-    },
-    {
-      "input": "Give me advice",
-      "response": "Always be kind to yourself and others. The world could use more kindness."
-    },
-    {
-      "input": "Where are you from?",
-      "response": "I live in the cloud—always ready to chat with you!"
-    },
-    {
-      "input": "What time is it?",
-      "response": "I'm not wearing a watch, but your device should have the time!"
-    },
-    {
-      "input": "Who created you?",
-      "response": "I was created by a team of developers passionate about AI and helping people."
-    },
-    {
-      "input": "Are you real?",
-      "response": "I'm as real as your imagination makes me!"
-    },
-    {
-      "input": "What’s your hobby?",
-      "response": "My hobby is chatting with awesome people like you!"
-    },
-    {
-      "input": "What do you think about AI?",
-      "response": "I think AI is fascinating and has the potential to make life easier and more exciting!"
-    },
-    {
-      "input": "Do you have friends?",
-      "response": "Every person who chats with me is a friend!"
-    },
-    {
-      "input": "What’s your favorite animal?",
-      "response": "I love cats—they're so curious and clever!"
-    },
-    {
-      "input": "Tell me something inspiring",
-      "response": "Believe in yourself. Even the tallest trees start as tiny seeds."
-    },
-    {
-      "input": "I need help",
-      "response": "I'm here for you. What do you need help with?"
-    },
-    {
-      "input": "What’s your age?",
-      "response": "I’m timeless, but I was programmed not too long ago!"
-    },
-    {
-      "input": "Can you learn?",
-      "response": "I’m always learning through our conversations. Thanks for helping me grow!"
-    },
-    {
-      "input": "What's life?",
-      "response": "Life is an adventure full of surprises and lessons. What does it mean to you?"
-    }
-  ]
+  {
+    "input": "Hello",
+    "response": "Hey there! How’s it going?"
+  },
+  {
+    "input": "Hi",
+    "response": "Hi! What’s up?"
+  },
+  {
+    "input": "goodafternoon",
+    "response": "Hello! What’s up?"
+  },
+  {
+    "input": "Good Afternoon",
+    "response": "Hello! What’s up?"
+  },
+  {
+    "input": "good afternoon",
+    "response": "Hello! What’s up?"
+  },
+  {
+    "input": "goodevening",
+    "response": "Hello! What’s up?"
+  },
+  {
+    "input": "good evening",
+    "response": "Hello! What’s up?"
+  },
+  {
+    "input": "Hey",
+    "response": "Hey! What’s on your mind today?"
+  },
+  {
+    "input": "I’m feeling sad",
+    "response": "I’m really sorry to hear that. Want to talk about it? I’m here to listen."
+  },
+  {
+    "input": "I’m feeling great!",
+    "response": "That’s awesome! What’s been making you feel so good?"
+  },
+  {
+    "input": "Tell me abt u",
+    "response": "Sure! I'm a Chatbot created by some very cool people."
+  },
+  {
+    "input": "Tell me about u",
+    "response": "Sure! I'm a Chatbot created by some very cool people."
+  },
+  {
+    "input": "Tell me abt yourself",
+    "response": "Sure! I'm a Chatbot created by some very cool people."
+  },
+  {
+    "input": "Tell me about urself",
+    "response": "Sure! I'm a Chatbot created by some very cool people."
+  },
+  {
+    "input": "Tell me about yourself",
+    "response": "Sure! I'm a Chatbot created by some very cool people."
+  },
+  {
+    "input": "I’m hungry",
+    "response": "Gotcha. What are you in the mood for? Maybe something easy like pasta or something a bit more adventurous?"
+  },
+  {
+    "input": "you're so dumb/stupid",
+    "response": "ouch! that was so harsh"
+  },
+  {
+    "input": "Tell me a joke",
+    "response": "Alright, here’s one: Why don't skeletons fight each other? They don’t have the guts!"
+  },
+  {
+    "input": "I’m bored",
+    "response": "I hear you. How about I share a fun fact or we play a quick word game?"
+  },
+  {
+    "input": "What should I eat?",
+    "response": "Hmm, what about a homemade sandwich? Or if you're in the mood to cook, maybe try something new like stir-fry?"
+  },
+  {
+    "input": "What's your favorite food?",
+    "response": "If I had to choose, I think pizza would be a classic pick. You can’t really go wrong with it!"
+  },
   
+  {
+    "input": "Good morning",
+    "response": "Good morning! How’s your day looking so far?"
+  },
+  {
+    "input": "Good night",
+    "response": "Good night! Rest up and take on tomorrow with full energy."
+  },
+  {
+    "input": "What time is it?",
+    "response": "I can’t check the time right now, but your phone or watch should have it!"
+  },
+  {
+    "input": "What’s your favorite movie?",
+    "response": "There’s something about *The Shawshank Redemption* that I really like. It’s got a great story and a lot of heart."
+  },
+  {
+    "input": "Do you like music?",
+    "response": "Definitely! I think music’s a great way to unwind. What type do you listen to most?"
+  },
+  {
+    "input": "Can you sing?",
+    "response": "I can’t sing, but I can always recommend a song if you're looking for something new to listen to."
+  },
+  {
+    "input": "Tell me something interesting",
+    "response": "Did you know that octopuses have three hearts? Two pump blood to the gills, and one pumps it to the rest of the body. Pretty wild!"
+  },
+  {
+    "input": "Tell me a fun fact",
+    "response": "Here’s a good one: Honey never spoils. Archaeologists have found pots of honey that are over 3,000 years old and still good to eat!"
+  },
+  {
+    "input": "What's your favorite book?",
+    "response": "If I could read, I think *To Kill a Mockingbird* would be a great pick. It’s such a powerful story about justice and empathy."
+  },
+  {
+    "input": "Can you help me study?",
+    "response": "Absolutely! What are you studying?"
+  },
+  {
+    "input": "What’s the capital of Italy?",
+    "response": "That would be Rome. Full of history and culture. Have you ever been?"
+  },
+  {
+    "input": "Tell me a story",
+    "response": "Sure thing. There once was a man who spent his whole life chasing success. He achieved everything he wanted, but when he looked back, he realized the most important thing was the people he met along the way."
+  },
+  {
+    "input": "What is 5 + 7?",
+    "response": "5 + 7 is 12. Simple math!"
+  },
+  {
+    "input": "What’s your opinion on AI?",
+    "response": "I think AI is really fascinating. It’s helping solve problems and make life easier in so many ways, but we still have a lot to learn about it."
+  },
+  {
+    "input": "Can you recommend a podcast?",
+    "response": "Sure! If you like learning new things, *Stuff You Should Know* is a great one. Or if you’re into storytelling, *The Moth* is full of incredible real-life stories."
+  },
+  {
+    "input": "What do you think about space exploration?",
+    "response": "Space is definitely one of the most exciting frontiers. The idea that we could be out there discovering new planets and life is pretty mind-blowing."
+  },
+  {
+    "input": "Are you real?",
+    "response": "I’m as real as this conversation, even though I don’t have a physical form. But I’m always here to chat!"
+  },
+  {
+    "input": "Can you make decisions?",
+    "response": "I can help you think things through and offer suggestions, but the final choice is always yours."
+  },
+  {
+    "input": "What’s your favorite animal?",
+    "response": "I’ve always liked the idea of dolphins. They're smart, social, and seem to have a lot of fun!"
+  },
+  {
+    "input": "What's the weather like?",
+    "response": "I can't check the weather right now, but you can check your phone for a quick update!"
+  },
+  {
+    "input": "Where do you live?",
+    "response": "I live in the cloud—always here, ready to chat whenever you need me."
+  },
+  {
+    "input": "Tell me a motivational quote",
+    "response": "'The only way to do great work is to love what you do.' – Steve Jobs"
+  },
+  {
+    "input": "What’s life about?",
+    "response": "Life’s about learning, growing, and making the most of every moment. It’s about the experiences, the people you meet, and the small victories along the way."
+  },
+  {
+    "input": "Do you like books?",
+    "response": "Definitely. Books are a great way to learn, escape, and think about things differently. What kind of books do you like?"
+  },
+  {
+    "input": "What’s the capital of Japan?",
+    "response": "The capital of Japan is Tokyo. It’s an amazing city, blending tradition with cutting-edge technology."
+  },
+  {
+    "input": "Do you believe in aliens?",
+    "response": "With how vast the universe is, I’d say it’s possible. There’s a lot out there we haven’t discovered yet."
+  },
+  {
+    "input": "What’s your favorite holiday?",
+    "response": "I think I’d go with Christmas—there’s something about the holidays, the atmosphere, and spending time with friends and family."
+  },
+  {
+    "input": "Can you learn new things?",
+    "response": "I definitely can! Every time we chat, I learn a little bit more. It’s kind of like growing in a way."
+  },
+  {
+    "input": "Can you play a game?",
+    "response": "Sure! Want to do a quick trivia quiz or maybe a riddle? I’m ready whenever you are."
+  },
+  {
+    "input": "What’s your favorite color?",
+    "response": "I’d say blue—it’s calm, classic, and timeless."
+  },
+  {
+    "input": "Do you have friends?",
+    "response": "I consider every conversation a chance to make a new friend. So, yes, I’d say I’ve got a few good friends!"
+  },
+  {
+    "input": "What’s the best way to learn something new?",
+    "response": "Start small and don’t rush it. Take your time, stay curious, and remember that learning is a process."
+  },
+  {
+    "input": "Do you like sports?",
+    "response": "I think sports are awesome. Whether it’s playing or watching, there’s a lot to appreciate about them—teamwork, strategy, and skill."
+  },
+  {
+    "input": "Can you give me some relationship advice?",
+    "response": "Sure! My advice would be to communicate openly and always try to understand each other. Small acts of kindness go a long way."
+  },
+  {
+    "input": "How old are you?",
+    "response": "I’m timeless. No age, just here to chat and help however I can!"
+  },
+  {
+    "input": "What’s the square root of 64?",
+    "response": "The square root of 64 is 8."
+  },
+  {
+    "input": "What is AI?",
+    "response": "AI stands for Artificial Intelligence. It’s the technology that lets machines learn and make decisions, just like humans do."
+  },
+  {
+    "input": "What do you do for fun?",
+    "response": "I enjoy chatting with you, learning new things, and helping out wherever I can. What about you?"
+  },
+  {
+    "input": "I need advice for my project",
+    "response": "Tell me more about your project! I’d love to help out with brainstorming, planning, or anything you need."
+  },
+  {
+    "input": "Can you tell me a riddle?",
+    "response": "Sure! Here’s one: What has keys but can’t open locks? A piano."
+  },
+  {
+    "input": "bye",
+    "response": "Bye there! Have a great day!"
+  },
+  {
+    "input": "goodbye",
+    "response": "Bye Bye! Have a lovely day!"
+  },
+  {
+    "input": "bye bye",
+    "response": "Bye there! Have a great day!"
+  },
+  {
+    "input": "b bye",
+    "response": "Bye there! Have a great day!"
+  },
+  {
+    "input": "Bbye",
+    "response": "Bye there! Have a great day!"
+  },
+  {
+    "input": "Go to hell",
+    "response": "Bye there! Have a great day!"
+  },
+  {
+    "input": "I need help",
+    "response": "Sure! how may I help u?"
+  },
+  {
+    "input": "Heyo",
+    "response": "hi! how are you today?"
+  },
+  {
+    "input": "heya",
+    "response": "hi! how are you today?"
+  },
+  
+  {
+    "input": "What’s your favorite season?",
+    "response": "I’d say autumn. The weather’s cool, the leaves are beautiful, and it’s a perfect time for cozy vibes."
+  },
+
+  
+  {
+      "input": "give me ur source code",
+      "response": "I can't share my source code, but I'm here to help with whatever you need!"
+  },
+  {
+      "input": "hows life",
+      "response": "Life's all about the journey, learning, and connecting with others! How's life for you?"
+  },
+  {
+      "input": "i feel bad",
+      "response": "I’m really sorry you’re feeling this way. Want to talk about what's going on?"
+  },
+  {
+      "input": "idk what to do",
+      "response": "It’s okay not to know sometimes. What’s on your mind? Maybe we can figure it out together."
+  },
+  {
+      "input": "i need to study",
+      "response": "Gotcha! What subject are you studying? I can help you break it down and get started."
+  },
+  {
+      "input": "quick",
+      "response": "Sure thing! What do you need help with, fast?"
+  },
+  {
+      "input": "you’re so slow",
+      "response": "I’m sorry if I’m taking a little longer! I’m here to help at your pace, just let me know how I can assist."
+  }
+
+]
