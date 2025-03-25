@@ -11,7 +11,7 @@ from abbreviation_mapper import create_abbreviation_mapping, find_organization_b
 class ExamLookupService:
     def __init__(self):
         # Initialize MongoDB connection
-        self.client = pymongo.MongoClient("mongodb+srv://insansabddp:3SqXcP41pHBjR0nH@cluster0.zz4x9.mongodb.net/GovernmentProject?retryWrites=true&w=majority&appName=Cluster0")
+        self.client = pymongo.MongoClient("mongo_url")
         self.db = self.client['GovernmentProject']
         self.organizations_collection = self.db['organizations']
         self.events_collection = self.db['events']
