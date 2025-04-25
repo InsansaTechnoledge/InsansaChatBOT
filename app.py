@@ -15,6 +15,7 @@ class ExamLookupService:
         self.db = self.client['GovernmentProject']
         self.organizations_collection = self.db['organizations']
         self.events_collection = self.db['events']
+        self.events_collection_activeexams = self.db['eventtypes']
         
         # Initialize semantic search components
         self.model = None
@@ -76,18 +77,17 @@ class ExamLookupService:
     
     def process_user_input(self, user_input):
         """Process user input and return appropriate response."""
-        # Check if it's a math question
-        if self._is_math_question(user_input):
-            answer = self._solve_math_problem(user_input)
-            return {"response": f"The answer is: {answer}"}, None, None
+        # Normalize the input
+        normalized_input = user_input.lower().strip()
         
-        # Try to find organization using mapping
+        # Try to find organization using mapping first - PRIORITIZE THIS
         organization = find_organization_by_input(
             self.organizations_collection, 
             user_input, 
             self.abbreviation_map
         )
         
+        # If organization is found, process that first regardless of other keywords
         if organization:
             if 'events' in organization and organization['events']:
                 event_ids = organization['events']
@@ -111,15 +111,97 @@ class ExamLookupService:
                 }, organization, event_ids
             else:
                 return {"message": f"No present events for {organization['name']} ({organization['abbreviation']})"}, None, None
+        
+        # If no organization was found, then check for other conditions
+        # Check if it's requesting the count of active exams - expanded matching
+        exam_count_keywords = [
+            "count exams", "total exams", "active exams", "how many exams",
+            "number of exams", "total number of exams", "how many active", 
+            "tell me total", "exam count", "active exam"
+        ]
+        
+        # Check if any of the keywords appear in the user input
+        if any(keyword in normalized_input for keyword in exam_count_keywords):
+            return self.get_active_exams_count(), None, None
+        
+        
+        admitcard_keywords = [
+            "admit card", "admitcard", "admit card count", "total admit cards",
+            "how many admit cards", "number of admit cards", "total number of admit cards",
+        ]
+        
+        # Check if any of the keywords appear in the user input
+        if any(keyword in normalized_input for keyword in admitcard_keywords):
+            return self.get_admitcard_count(), None, None
+        
+        result_keywords = [
+            "result", "results", "result count", "total results",
+            "how many results", "number of results", "total number of results",
+        ]
+        
+        # Check if any of the keywords appear in the user input
+        if any(keyword in normalized_input for keyword in result_keywords):
+            return self.get_result_count(), None, None
+        
+        
+        
+        
+        
+        # Check if it's a math question
+        if self._is_math_question(user_input):
+            answer = self._solve_math_problem(user_input)
+            return {"response": f"The answer is: {answer}"}, None, None
+        
+        # If we get here, no organization was found and no other condition matched
+        # Try semantic search as a last resort
+        result, confidence = self._search_general(user_input)
+        
+        if result != "Exam not found":
+            return {"message": result}, None, None
         else:
-            # If not found using abbreviation mapping, try semantic search
-            result, confidence = self._search_general(user_input)
-            
-            if result != "Exam not found":
-                return {"message": result}, None, None
-            else:
-                return {"message": "No matching exam found. Please try a different search term."}, None, None
-    
+            return {"message": "No matching exam found. Please try a different search term."}, None, None
+
+    def get_active_exams_count(self):
+        """Get the count of all active exams in the database."""
+        # Find the document with type 'exams' and get the events array length
+        exams_doc = self.db['eventtypes'].find_one({"type": "Exam"})
+        
+        if exams_doc and 'events' in exams_doc:
+            active_exams_count = len(exams_doc['events'])
+        else:
+            active_exams_count = 0
+        
+        # Return a formatted response
+        return {
+            "response": f"There are currently {active_exams_count} active exams in this portal."
+        }
+        
+    def get_admitcard_count(self):
+        exams_doc = self.db['eventtypes'].find_one({"type": "AdmitCard"})
+        
+        if exams_doc and 'events' in exams_doc:
+            admitcard_count = len(exams_doc['events'])
+        else:
+            admitcard_count = 0
+        
+        # Return a formatted response
+        return {
+            "response": f"There are currently {admitcard_count} admit card in this portal."
+        }
+        
+    def get_result_count(self):
+        exams_doc = self.db['eventtypes'].find_one({"type": "Result"})
+        
+        if exams_doc and 'events' in exams_doc:
+            result_count = len(exams_doc['events'])
+        else:
+            result_count = 0
+        
+        # Return a formatted response
+        return {
+            "response": f"There are currently {result_count} result in this portal."
+        }
+        
     def get_event_details(self, event_id):
         """Get formatted details for a specific event."""
         try:
